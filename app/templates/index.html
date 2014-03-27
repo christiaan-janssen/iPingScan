@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% block content %}
+<h1><small>Active iPads for Beachclub <span style="color:#F90;">O</span>.</small></h1>
+<hr>
+<div>
+	<table>
+  		<thead>
+    		<tr>
+				<th>Device Name:</th>
+				<th>Time:</th>
+				<th>&nbsp;</th>
+			</tr>
+		</thead>
+  		<tbody>
+		{% for name, ip in results.iteritems() %}
+		<tr>
+			<td>{{name}}</td> 
+			<td>{{ip}}</td>
+			<td><img src="{{ url_for('static', filename='img/green.png' )}}" width="25px" height="25px"></td>
+		</tr>
+		{% endfor %}
+	 	</tbody>
+	</table>
+</div>
+
+{% endblock %}
